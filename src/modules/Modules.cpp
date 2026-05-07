@@ -28,6 +28,10 @@
 #if !MESHTASTIC_EXCLUDE_NODEINFO
 #include "modules/NodeInfoModule.h"
 #endif
+#if !MESHTASTIC_EXCLUDE_NODELISTREPORT
+#include "modules/NodeListReportModule.h"
+#include "modules/WifiNodeListReportModule.h"
+#endif
 #if !MESHTASTIC_EXCLUDE_GPS
 #include "modules/PositionModule.h"
 #endif
@@ -136,6 +140,16 @@ void setupModules()
 #endif
 #if !MESHTASTIC_EXCLUDE_NODEINFO
     nodeInfoModule = new NodeInfoModule();
+#endif
+#if !MESHTASTIC_EXCLUDE_NODELISTREPORT
+    if (moduleConfig.has_node_list_report && moduleConfig.node_list_report.enabled) {
+        nodeListReportModule = new NodeListReportModule();
+    }
+#if HAS_WIFI
+    if (moduleConfig.wifi_node_list_report.enabled) {
+        wifiNodeListReportModule = new WifiNodeListReportModule();
+    }
+#endif
 #endif
 #if !MESHTASTIC_EXCLUDE_GPS
     positionModule = new PositionModule();

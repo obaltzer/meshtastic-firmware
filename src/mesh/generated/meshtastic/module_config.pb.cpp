@@ -33,6 +33,12 @@ PB_BIND(meshtastic_ModuleConfig_PaxcounterConfig, meshtastic_ModuleConfig_Paxcou
 PB_BIND(meshtastic_ModuleConfig_TrafficManagementConfig, meshtastic_ModuleConfig_TrafficManagementConfig, AUTO)
 
 
+PB_BIND(meshtastic_ModuleConfig_NodeListReportConfig, meshtastic_ModuleConfig_NodeListReportConfig, AUTO)
+
+
+PB_BIND(meshtastic_ModuleConfig_WifiNodeListReportConfig, meshtastic_ModuleConfig_WifiNodeListReportConfig, AUTO)
+
+
 PB_BIND(meshtastic_ModuleConfig_SerialConfig, meshtastic_ModuleConfig_SerialConfig, AUTO)
 
 
